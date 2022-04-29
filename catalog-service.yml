@@ -53,3 +53,15 @@ management:
   health:
     circuitbreakers:
       enabled: true
+    
+    movies:
+        waitDuration: 1000
+        maxAttempts: 3
+        retryExceptions:
+          - feign.FeignException$InternalServerError
+
+      serie:
+        waitDuration: 1000
+        maxAttempts: 3
+        retryExceptions:
+          - feign.FeignException$InternalServerError
